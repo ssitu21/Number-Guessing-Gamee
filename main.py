@@ -41,6 +41,28 @@ def play_round():
     attempts = 0
     print(f"You have {max_attempts} attempts to guess the number.\n")
 
+    # Guessing loop
+    while attempts < max_attempts:
+        guess = get_valid_int("Your guess: ")
+        attempts += 1
+
+        # Check if guess is too low or too high
+        if guess < secret:
+            print("Too   low!")
+        elif guess > secret:
+            print("Too high!")
+        else:
+            # Display success message if guessed correctly
+            print(f"\nGGs! You guessed it in {attempts} attempt(s).")
+            return True
+
+    # If max attempts are used up, reveal the correct number
+    print(
+        f"\nGame Over you've used all {max_attempts} attempts. The number was {secret}."
+    )
+    return False
+    # Guessing loop ends here
+
 
 # Main game loop
 def main():
