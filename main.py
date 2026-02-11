@@ -4,12 +4,20 @@ import random
 
 # Function to get a valid integer input with error handling
 def get_valid_int(prompt):
-    pass
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a whoe number.")
 
 
 # Function to get a valid 'y' or 'n' response from the user
 def get_yes_no(prompt):
-    pass
+    while True:
+        response = input(prompt).strip().lower()
+        if response in ("y", "n"):
+            return response
+        print("Please enter 'y' or 'n'.")
 
 
 # Function to play one round of the game
