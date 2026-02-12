@@ -1,4 +1,4 @@
-# Import random module to generate a random number
+# Import random module to generate a random numberx
 import random
 
 
@@ -8,7 +8,7 @@ def get_valid_int(prompt):
         try:
             return int(input(prompt))
         except ValueError:
-            print("Invalid input. Please enter an whole number.")
+            print("Invalid input. Please enter an whole number. 😅 ")
 
 
 # Function to get a valid 'y' or 'n'
@@ -17,7 +17,7 @@ def get_yes_no(prompt):
         response = input(prompt).strip().lower()
         if response in ("y", "n"):
             return response
-        print("Please enter 'y' or 'n'.")
+        print("Please enter 'y' or 'n'.👹")
 
 
 # Function to play one round of the game
@@ -37,9 +37,9 @@ def play_round():
     # Generate random number
     secret = random.randint(low, high)
 
-    # Track number of attempts
+    # find number of attempts
     attempts = 0
-    print(f"You have {max_attempts} attempts to guess the number.\n")
+    print(f"You have {max_attempts} 💀  attempts to guess the number.\n")
 
     # Guessing loop
     while attempts < max_attempts:
@@ -48,16 +48,16 @@ def play_round():
 
         # Check if guess is too low or too high
         if guess < secret:
-            print("Too   low!")
+            print("Too low! 😅")
         elif guess > secret:
-            print("Too high!")
+            print("Too high! 😅")
         else:
             # Display success message if guessed correctly
-            print(f"\nGGs! You guessed it in {attempts} attempt(s).")
+            print(f"\nGGs!🥳 You guessed it in {attempts} attempt(s).🥳 😁")
             return True
 
     print(
-        f"\nGame Over you've used all {max_attempts} attempts. The number was {secret}."
+        f"\nGame Over 😭   you've used all {max_attempts} attempts. The number was {secret}. 😭"
     )
     return False
     # Guessing loop ends here
@@ -67,18 +67,18 @@ def play_round():
 def main():
     # Ask for user's name and greet them
     name = input("Whats your name: ")
-    print(f"Hello, {name}! Welcome to the Number Guessing Game.\n")
+    print(f"Hello, {name}! 🖐️   Welcome to the Number Guessing Game.\n")
 
-    # Replay loo
+    # Replay loop
     playing = True
     while playing:
         play_round()
-        # Ask if they want to play again
-        again = get_yes_no("\nDo you want to play again (y/n): ")
+        # Ask want to play again
+        again = get_yes_no("\nDo you want to play again (y/n) 😱  : ")
         if again == "n":
             playing = False
 
-    print(f"Thanks for playing, {name}! Goodbye!")
+    print(f"Thanks for playing, 👀 {name}! Goodbye! 🤞")
 
 
 # Run the game
