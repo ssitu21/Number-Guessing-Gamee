@@ -2,7 +2,7 @@
 import random
 
 
-# Function to get a valid integer input with error handling
+# Function to get a valid number
 def get_valid_int(prompt):
     while True:
         try:
@@ -11,7 +11,7 @@ def get_valid_int(prompt):
             print("Invalid input. Please enter an whole number.")
 
 
-# Function to get a valid 'y' or 'n' response from the user
+# Function to get a valid 'y' or 'n'
 def get_yes_no(prompt):
     while True:
         response = input(prompt).strip().lower()
@@ -56,7 +56,6 @@ def play_round():
             print(f"\nGGs! You guessed it in {attempts} attempt(s).")
             return True
 
-    # If max attempts are used up, reveal the correct number
     print(
         f"\nGame Over you've used all {max_attempts} attempts. The number was {secret}."
     )
@@ -69,7 +68,17 @@ def main():
     # Ask for user's name and greet them
     name = input("Whats your name: ")
     print(f"Hello, {name}! Welcome to the Number Guessing Game.\n")
-    play_round()
+
+    # Replay loo
+    playing = True
+    while playing:
+        play_round()
+        # Ask if they want to play again
+        again = get_yes_no("\nDo you want to play again (y/n): ")
+        if again == "n":
+            playing = False
+
+    print(f"Thanks for playing, {name}! Goodbye!")
 
 
 # Run the game
